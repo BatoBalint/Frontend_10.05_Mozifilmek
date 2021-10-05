@@ -22,17 +22,22 @@ class Film {
   }
 }
 
-var testFilm = new Film("Kacsa", "En", "2020");
+var testFilm = new Film("StarWars", "A pali", "2045");
 
 FilmTomb.push(testFilm);
 
 function felveszBtnClick() {
   let inputs = document.getElementsByClassName("filmInputs");
-  let film = new Film(inputs[0].value, inputs[1].value, inputs[2].value);
-  FilmTomb.push(film);
+  if (inputs[0].value != '' && inputs[1].value != '' && inputs[2].value != '') {
+    let film = new Film(inputs[0].value, inputs[1].value, inputs[2].value);
+    FilmTomb.push(film);
+  } else {
+    alert("Üresen hagyott egy mezőt");
+  }
   for (let i = 0; i < 3; i++) {
     inputs[i].value = "";
   }
+  createTable();
 }
 
 function listazasBtnClick() {
@@ -48,14 +53,17 @@ function createTable() {
     let row = tableBody.insertRow();
     let td1 = row.insertCell();
     let text1 = document.createTextNode(FilmTomb[i].nev);
+    td1.classList.add("text-white");
     td1.appendChild(text1);
 
     let td2 = row.insertCell();
     let text2 = document.createTextNode(FilmTomb[i].rendezo);
+    td2.classList.add("text-white");
     td2.appendChild(text2);
 
     let td3 = row.insertCell();
     let text3 = document.createTextNode(FilmTomb[i].kiadasi_ev);
+    td3.classList.add("text-white");
     td3.appendChild(text3);
   }
 
