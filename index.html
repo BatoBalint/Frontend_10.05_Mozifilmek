@@ -36,7 +36,23 @@
             <button class="btn btn-secondary" type="button" name="button" onclick="felveszBtnClick()">Felvesz</button>
           </div>
 
+          <div class="mb-3">
+            <button class="btn btn-info fw-bold" type="button" name="button" onclick="listazasBtnClick()">Listázás</button>
+          </div>
+
         </form>
+      </div>
+      <div class="row">
+        <table id="kiirasTable" class="table-striped text-light" style="display: none">
+          <thead>
+            <th>Film neve</th>
+            <th>Rendező neve</th>
+            <th>Film kiadási éve</th>
+          </thead>
+          <tbody id="kiirasTablebody">
+
+          </tbody>
+        </table>
       </div>
 
     </div>

@@ -1,5 +1,7 @@
 var testP = document.getElementById('testP');
 var FilmTomb = [];
+var tablazat = document.getElementById('kiirasTable');
+var tableBody = document.getElementById('kiirasTablebody')
 
 class Film {
   nev;
@@ -26,9 +28,37 @@ FilmTomb.push(testFilm);
 
 function felveszBtnClick() {
   let inputs = document.getElementsByClassName("filmInputs");
+  if (inputs[0].value != '')
   let film = new Film(inputs[0].value, inputs[1].value, inputs[2].value);
   FilmTomb.push(film);
   for (let i = 0; i < 3; i++) {
     inputs[i].value = "";
   }
+}
+
+function listazasBtnClick() {
+  createTable();
+}
+
+function createTable() {
+  tablazat.style.display = "";
+
+  tableBody.innerHTML = "";
+
+  for (let i = 0; i < FilmTomb.length; i++) {
+    let row = tableBody.insertRow();
+    let td1 = row.insertCell();
+    let text1 = document.createTextNode(FilmTomb[i].nev);
+    td1.appendChild(text1);
+
+    let td2 = row.insertCell();
+    let text2 = document.createTextNode(FilmTomb[i].rendezo);
+    td2.appendChild(text2);
+
+    let td3 = row.insertCell();
+    let text3 = document.createTextNode(FilmTomb[i].kiadasi_ev);
+    td3.appendChild(text3);
+  }
+
+  tableBody.insertRow();
 }
