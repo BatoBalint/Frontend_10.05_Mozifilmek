@@ -28,7 +28,6 @@ FilmTomb.push(testFilm);
 
 function felveszBtnClick() {
   let inputs = document.getElementsByClassName("filmInputs");
-  if (inputs[0].value != '')
   let film = new Film(inputs[0].value, inputs[1].value, inputs[2].value);
   FilmTomb.push(film);
   for (let i = 0; i < 3; i++) {
