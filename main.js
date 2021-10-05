@@ -1,4 +1,5 @@
 var testP = document.getElementById('testP');
+var FilmTomb = [];
 
 class Film {
   nev;
@@ -19,6 +20,8 @@ class Film {
   }
 }
 
-const testFilm = new Film("Kacsa", "En", "2020");
+var testFilm = new Film("Kacsa", "En", "2020");
 
-testP.innerHTML = testFilm.getAdatok;
+FilmTomb.push(testFilm);
+
+testP.innerHTML = FilmTomb[0].getAdatok;
