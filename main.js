@@ -23,7 +23,10 @@ class Film {
 }
 
 var testFilm = new Film("StarWars", "A pali", "2045");
-
+FilmTomb.push(testFilm);
+var testFilm = new Film("Peti", "Lajos Kiss", "1999");
+FilmTomb.push(testFilm);
+var testFilm = new Film("Almafa", "Nagy Gabriell", "2005");
 FilmTomb.push(testFilm);
 
 function felveszBtnClick() {
@@ -68,4 +71,43 @@ function createTable() {
   }
 
   tableBody.insertRow();
+}
+
+function filmNeveRendezes() {
+  FilmTomb.sort((a, b) => {
+    if (a.nev < b.nev) {
+      return -1;
+    }
+    if (a.nev > b.nev){
+      return 1;
+    }
+    return 0;
+  });
+  createTable();
+}
+
+function rendezoNeveRendezes() {
+  FilmTomb.sort((a, b) => {
+    if (a.rendezo < b.rendezo) {
+      return -1;
+    }
+    if (a.rendezo > b.rendezo){
+      return 1;
+    }
+    return 0;
+  });
+  createTable();
+}
+
+function kiadasiEvRendezes() {
+  FilmTomb.sort((a, b) => {
+    if (a.kiadasi_ev < b.kiadasi_ev) {
+      return -1;
+    }
+    if (a.kiadasi_ev > b.kiadasi_ev){
+      return 1;
+    }
+    return 0;
+  });
+  createTable();
 }
