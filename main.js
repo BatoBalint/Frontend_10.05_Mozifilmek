@@ -24,4 +24,11 @@ var testFilm = new Film("Kacsa", "En", "2020");
 
 FilmTomb.push(testFilm);
 
-testP.innerHTML = FilmTomb[0].getAdatok;
+function felveszBtnClick() {
+  let inputs = document.getElementsByClassName("filmInputs");
+  let film = new Film(inputs[0].value, inputs[1].value, inputs[2].value);
+  FilmTomb.push(film);
+  for (let i = 0; i < 3; i++) {
+    inputs[i].value = "";
+  }
+}

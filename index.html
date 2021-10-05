@@ -9,26 +9,31 @@
   </head>
   <body class="bg-dark">
     <div class="container">
+      <nav class="navbar">
+        <div class="container-fluid">
+          <p class="text-light navbar-brand h1">Filmek</p>
+        </div>
+      </nav>
       <div class="row">
         <form class="" action="index.html" method="post">
 
           <div class="mb-3">
             <label class="form-label text-primary">Film neve: </label>
-            <input class="form-control" type="text" name="nev" value="">
+            <input class="form-control filmInputs" type="text" name="nev" value="">
           </div>
 
           <div class="mb-3">
             <label class="form-label text-primary">Rendező neve: </label>
-            <input class="form-control" type="text" name="nev" value="">
+            <input class="form-control filmInputs" type="text" name="nev" value="">
           </div>
 
           <div class="mb-3">
             <label class="form-label text-primary" for="">Film kiadási éve: </label>
-            <input class="form-control" type="text" name="nev" value="">
+            <input class="form-control filmInputs" type="text" name="nev" value="">
           </div>
 
           <div class="mb-3">
-            <button class="btn btn-secondary" type="button" name="button">Felvesz</button>
+            <button class="btn btn-secondary" type="button" name="button" onclick="felveszBtnClick()">Felvesz</button>
           </div>
 
         </form>
